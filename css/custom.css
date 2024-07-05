@@ -1,0 +1,161 @@
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&display=swap');
+
+body,
+html,
+* {
+  font-family: 'Nunito Sans', sans-serif;
+} */
+
+body{
+    background-color: #f8f9fa;
+    font-size: large;   
+}
+  
+
+  
+#sidebar > .nav-pills {
+      flex-direction: column;
+    }
+  
+input[type="checkbox"] + label {
+      display: none; /* Hide the label */
+    }
+  
+#toggle{
+    position: absolute;
+    left: -280px; /* Hide the checkbox */
+}
+  
+#sidebar{
+    min-height: 100vh;
+    z-index: 2;
+}
+  
+  
+.card{
+    z-index: 1;
+}
+
+/*#menulist{ 
+    
+}
+*/
+
+.nav-link:hover{
+  background-color: #03867e;
+  color: white;
+}
+
+
+#navbar{
+    background-color: #038c83;
+} 
+  
+  
+#sidebar{
+  background-color: #027870;
+}
+
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link{
+  background-color: #038c83;
+}
+
+.nav-link{
+  color:white;
+}
+
+.footer {
+  background-color: #038c83; /* Change this to the color you want */
+  color: #fff; /* Optionally change text color to white */
+  /* Add any other styling you need */
+}
+
+
+
+
+
+
+  
+  
+/* Styles for mobile devices */
+  @media only screen and (max-width: 767px) {
+    /* Your mobile styles go here */
+
+    #sidebar {
+      width: 280px; 
+      height: 100%;
+      display: flex;
+      position: absolute;
+      transition: all 0.4s; /* Increased duration for a more noticeable effect */
+      
+      flex-direction: column;
+      left: -280px; /* Set initial position = hidden */
+    }
+
+    #navbar{
+        display: flex;
+      }
+  
+    
+    
+    /* Apply styles when checkbox is checked */
+    input[id="toggle"]:checked + label ~ #sidebar {
+      left: 0px;
+    }
+
+    #navbar-title{
+        display: none;
+    }
+
+  
+
+  }
+
+
+  
+/* Styles for desktop devices */
+  @media only screen and (min-width: 768px) {
+    /* Your desktop styles go here */
+
+    #sidebar {
+      width: 280px; 
+      height: 100%;
+      display: flex;
+      transition: all 0.4s; 
+      flex-direction: column; /* Set initial position = hidden */
+    }
+
+    #labelko{
+        display: none;
+    }
+
+    #nav{
+        display: none;
+    }
+
+    #navbar{
+        display: flex;
+   
+    }
+
+
+  
+  }
+
+
+
+
+
+
+
+
+
+.footer {
+  background-color: #038c83;
+}
+
+
+

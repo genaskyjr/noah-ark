@@ -1,0 +1,93 @@
+body{
+  background-color: white;
+  }
+
+
+  #d_header{
+    display: flex;
+    
+  }
+
+  #m_nav{
+    display: flex;
+  }
+
+  #sidebar > .nav-pills {
+    flex-direction: column;
+  }
+
+  input[type="checkbox"] + label {
+    display: none; /* Hide the label */
+  }
+
+  #toggle{
+    position: absolute;
+    left: -280px; /* Hide the checkbox */
+  }
+
+  #sidebar{
+    min-height: 100vh;
+    z-index: 2;
+  }
+
+
+  .card{
+    z-index: 1;
+  }
+
+
+
+
+
+  /* Styles for mobile devices */
+@media only screen and (max-width: 767px) {
+  /* Your mobile styles go here */
+  #d_header{
+    display: none;
+  }
+  #sidebar {
+    width: 280px; 
+    height: 100%;
+    display: flex;
+    position: absolute;
+    transition: all 0.4s; /* Increased duration for a more noticeable effect */
+    background-color: #AACAE6;
+    flex-direction: column;
+    left: -280px; /* Set initial position = hidden */
+  }
+
+  
+  
+  /* Apply styles when checkbox is checked */
+  input[id="toggle"]:checked + label ~ #sidebar {
+    left: 0px;
+  }
+}
+
+/* Styles for desktop devices */
+@media only screen and (min-width: 768px) {
+  /* Your desktop styles go here */
+  #m_header{
+    display: none;
+  }
+  #m_nav{
+    
+    display: none;
+  }
+  #sidebar {
+    width: 280px; 
+    height: 100%;
+    display: flex;
+    transition: all 0.4s; /* Increased duration for a more noticeable effect */
+    background-color: #AACAE6;
+    flex-direction: column; /* Set initial position = hidden */
+  }
+
+}
+
+
+
+
+
+
+  

@@ -1,0 +1,59 @@
+<?php 
+// For register
+if(isset($_POST['fullname']) 
+&& isset($_POST['email']) 
+&& isset($_POST['address']) 
+&& isset($_POST['phone_number']) 
+&& isset($_POST['password']) 
+&& isset($_POST['password1']) ){
+    include_once('dbconnect.php');
+    $return_arr["status"] = 0;
+    $return_arr["message"] = "No Action.";
+
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $address = $_POST['address'];
+    $phone_number = $_POST['phone_number'];
+    $password = $_POST['password'];
+    $password1 = $_POST['password1'];
+
+   
+    $stmt = $conn->prepare('SELECT * FROM users WHERE email = :email');
+    $stmt->bindParam(':email', $email);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    if (count($result) > 0) {
+        $return_arr["status"] = 1;
+        $return_arr["message"] = "Email already registered.";
+    } else {
+
+
+        if($password != $password1){
+            $return_arr["status"] = 4;
+            $return_arr["message"] = "Password & confirmed password not match.";
+        }else{
+            // Insert the user into the database
+            $sql = "INSERT INTO users (is_role, reg_date, fullname, email, address, phone_number, password) 
+            VALUES ('user', NOW(), :fullname, :email, :address, :phone_number, :password)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':fullname', $fullname);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':address', $address);
+            $stmt->bindParam(':phone_number', $phone_number);
+            $stmt->bindParam(':password', $password);
+
+            if ($stmt->execute()) {
+            $return_arr["status"] = 2;
+            $return_arr["message"] = "Registered successfully, Redirect to Sign In Page.....";
+            } else {
+            $return_arr["status"] = 3;
+            $return_arr["message"] = "Error registering user.";
+            }
+        }  
+    } 
+}
+echo json_encode($return_arr);
+
+?>

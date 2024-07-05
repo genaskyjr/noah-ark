@@ -1,0 +1,14 @@
+body {
+    background-image: url('/assets/dogcatfootprints.jpg');
+    background-size: 2000px;
+}
+
+
+/* Add these styles to your CSS file */
+.is-valid {
+    border-color: #28a745; /* Green border color for valid input */
+}
+
+.is-invalid:focus {
+    border-color: #dc3545; /* Red border color for invalid input */
+}

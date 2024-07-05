@@ -1,0 +1,87 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
+
+#logo {
+  border-radius: 50%;                                     
+}
+#title, .nav-link{
+  font-family: 'Quicksand', sans-serif;   
+}
+
+
+
+
+#title{
+  font-size: large;
+  font-family: 'Quicksand', sans-serif;   
+}
+
+#main{
+  display: block;
+}
+
+
+
+
+#noah1{
+  color: #009d7d;
+}
+
+#dc1 {
+  color: #8f2200;
+}
+
+
+  /* Styles for mobile devices */
+  @media only screen and (max-width: 767px) {
+    /* Your mobile styles go here */
+    #noah1{
+      font-size: 40px;
+    }
+    
+    #dc1 {
+      font-size: 40px;
+    }
+    
+  }
+
+
+  
+  /* Styles for desktop devices */
+  @media only screen and (min-width: 768px) {
+    /* Your desktop styles go here */
+
+
+  #noah1{
+    font-size: 80px;
+  }
+
+  #dc1 {
+    font-size: 80px;
+  }
+
+  #nav{
+    position: fixed;
+    margin-top: 45px;
+    z-index: 5;
+  }
+  }
+    
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+

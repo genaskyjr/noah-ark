@@ -1,0 +1,9 @@
+/* CSS */
+body {
+  zoom: 80%; /* For older versions of IE */
+  transform: scale(0.8); /* For modern browsers */
+}
+
+#content {
+  min-height: 100vh;
+}
