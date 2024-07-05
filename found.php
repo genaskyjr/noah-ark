@@ -362,7 +362,7 @@ async function setupCamera() {
 include 'components/footer.php'
 ?>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6-0qYvbRrTRWBh8epiWmhMh7s3DQQQNs&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=""&callback=initMap" async defer></script>
 
 
 <script>
